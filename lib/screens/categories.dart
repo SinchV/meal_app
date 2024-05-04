@@ -6,8 +6,7 @@ import 'package:meal_app/widgets/category_grid_item.dart';
 import 'package:meal_app/data/dummy_data.dart';
 
 class CategoiesScreen extends StatelessWidget {
-  const CategoiesScreen({super.key, required this.onToggleFavorite,required this.availableMeal});
-  final void Function(Meal meal) onToggleFavorite;
+  const CategoiesScreen({super.key,required this.availableMeal});
   final List<Meal> availableMeal;
   void _selectCategory(BuildContext context, Category category) {
     final filteredmeal = availableMeal
@@ -17,7 +16,6 @@ class CategoiesScreen extends StatelessWidget {
       builder: (ctx) => MealsScreen(
         title: category.title,
         meals: filteredmeal,
-        onToggleFavorite: onToggleFavorite,
       ),
     ));
   }
